@@ -1,0 +1,22 @@
+/** @format */
+
+.todo_list {
+	width: 80%;
+	height: 60vh;
+	overflow-y: scroll;
+}
+.todo_list::-webkit-scrollbar {
+	height: 12px;
+	width: 0.2rem;
+	background: var(--primary);
+}
+
+.todo_list::-webkit-scrollbar-thumb {
+	background: var(--secondary);
+	-webkit-border-radius: 1ex;
+	-webkit-box-shadow: 0px 1px 2px var(--black);
+}
+
+.todo_list::-webkit-scrollbar-corner {
+	background: var(--contrast2);
+}

@@ -1,0 +1,11 @@
+/** @format */
+
+.todo_counter {
+	font-size: 2.5em;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+.todo_counter span {
+	color: var(--contrast2);
+}

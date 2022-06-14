@@ -1,0 +1,14 @@
+/** @format */
+.not_coincidences {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+}
+img {
+	width: 40vw;
+	height: 40vh;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
