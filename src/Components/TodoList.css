@@ -4,6 +4,10 @@
 	width: 80%;
 	height: 60vh;
 	overflow-y: scroll;
+	display: flex;
+	padding: 1rem 0;
+	gap: 1rem;
+	flex-direction: column;
 }
 .todo_list::-webkit-scrollbar {
 	height: 12px;

@@ -2,6 +2,8 @@
 
 import React, { useState } from "react"
 import "./TodoItem.css"
+import closeX from "../img/X.svg"
+import check_mark from "../img/check_mark.svg"
 const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
 	const [check, setCheck] = useState(false)
 	const handleChange = () => {
@@ -10,10 +12,21 @@ const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
 	}
 	return (
 		<div className="todo_item" key={todo.id}>
-			<span onClick={() => deleteTodo(todo.id)}>close</span>
+			<img
+				src={closeX}
+				className={`closeItem ${!todo.done ? "disabled" : ""}`}
+				onClick={todo.done ? () => deleteTodo(todo.id) : null}
+			/>
+
 			<div className="card">
 				<div className="check-mark">
-					<span onClick={handleChange}>check</span>
+					<img
+						src={check_mark}
+						onClick={handleChange}
+						alt="check-mark"
+						className={`check_mark ${!todo.done ? "disabled" : ""}`}
+					/>
+
 					<input
 						type="checkbox"
 						checked={todo.done}

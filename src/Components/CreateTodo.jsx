@@ -15,7 +15,7 @@ const CreateTodo = ({ setTodo }) => {
 		setNewTodo("")
 	}
 	return (
-		<>
+		<div className="create_todo">
 			<button>+</button>
 			<div className="modal_create">
 				<input
@@ -27,7 +27,7 @@ const CreateTodo = ({ setTodo }) => {
 				<button onClick={CancelCreation}>Cancel</button>
 				<button onClick={CreateTodo}>Create</button>
 			</div>
-		</>
+		</div>
 	)
 }
 

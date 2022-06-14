@@ -1,0 +1,38 @@
+/** @format */
+
+.todo_item {
+	background: var(--white);
+
+	-webkit-box-shadow: 7px 6px 25px -6px rgba(0, 0, 0, 0.49);
+	-moz-box-shadow: 7px 6px 25px -6px rgba(0, 0, 0, 0.49);
+	box-shadow: 7px 6px 25px -6px rgba(0, 0, 0, 0.49);
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+}
+.todo_item .closeItem {
+	position: absolute;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: 0;
+	transform: translate(5px, -5px);
+}
+.todo_item .card {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	align-items: center;
+}
+.todo_item .disabled {
+	filter: grayscale(100%);
+}
+.todo_item .closeItem.disabled {
+	cursor: not-allowed;
+}
+.check_mark {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}
