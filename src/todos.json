@@ -1,0 +1,19 @@
+{
+	"todos": [
+		{
+			"id": 1,
+			"description": "Learn React",
+			"done": false
+		},
+		{
+			"id": 2,
+			"description": "Learn Redux",
+			"done": false
+		},
+		{
+			"id": 3,
+			"description": "Learn React Native",
+			"done": true
+		}
+	]
+}

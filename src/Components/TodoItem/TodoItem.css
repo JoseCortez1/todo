@@ -36,3 +36,6 @@
 	width: 20px;
 	height: 20px;
 }
+p.completed {
+	text-decoration: line-through;
+}

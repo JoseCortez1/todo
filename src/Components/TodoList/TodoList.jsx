@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react"
-import NoCoincidences from "./NoCoincidences"
+import NoCoincidences from "../NoCoincidence/NoCoincidences"
 import "./TodoList.css"
 const TodoList = ({ to_dos, children }) => {
 	return (

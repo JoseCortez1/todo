@@ -2,8 +2,8 @@
 
 import React, { useState } from "react"
 import "./TodoItem.css"
-import closeX from "../img/X.svg"
-import check_mark from "../img/check_mark.svg"
+import closeX from "../../img/X.svg"
+import check_mark from "../../img/check_mark.svg"
 const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
 	const [check, setCheck] = useState(false)
 	const handleChange = () => {
@@ -33,7 +33,7 @@ const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
 						onChange={() => setCheck(check)}
 					/>
 				</div>
-				<p>{todo.description}</p>
+				<p className={`${todo.done ? "completed" : ""}`}>{todo.description}</p>
 			</div>
 		</div>
 	)

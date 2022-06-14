@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import "./CreateTodo.css"
+import add from "../../img/add.svg"
 const CreateTodo = ({ setTodo }) => {
 	const [newTodo, setNewTodo] = useState("")
 	const CreateTodo = () => {
@@ -16,7 +17,8 @@ const CreateTodo = ({ setTodo }) => {
 	}
 	return (
 		<div className="create_todo">
-			<button>+</button>
+			<img src={add} className="button_add" />
+
 			<div className="modal_create">
 				<input
 					type="text"

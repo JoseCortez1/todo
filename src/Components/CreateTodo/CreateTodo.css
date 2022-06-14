@@ -1,0 +1,17 @@
+/** @format */
+.create_todo {
+	position: relative;
+}
+.button_add {
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	top: 0;
+	right: 0;
+	transform: translate(5rem, -2rem);
+	cursor: pointer;
+}
+.button_add:hover {
+	transform: translate(5rem, -2rem) rotate(360deg);
+	transition: ease-in-out 0.5s;
+}

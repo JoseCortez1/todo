@@ -2,32 +2,20 @@
 
 import { useEffect, useState } from "react"
 import "./App.css"
-
-import CreateTodo from "./Components/CreateTodo"
-import NoCoincidences from "./Components/NoCoincidences"
-import TodoCounter from "./Components/TodoCounter"
-import TodoItem from "./Components/TodoItem"
-import TodoList from "./Components/TodoList"
-import TodoSearch from "./Components/TodoSearch"
+import CreateTodo from "./Components/CreateTodo/CreateTodo"
+import NoCoincidences from "./Components/NoCoincidence/NoCoincidences"
+import TodoCounter from "./Components/TodoCounter/TodoCounter"
+import TodoItem from "./Components/TodoItem/TodoItem"
+import TodoList from "./Components/TodoList/TodoList"
+import TodoSearch from "./Components/TodoSearch/TodoSearch"
+import todos from "./todos.json"
 const TodoApp = () => {
 	const [filter, setFilter] = useState([])
-	const [to_dos, setTodo] = useState([
-		{
-			id: 1,
-			description: "Learn React",
-			done: false,
-		},
-		{
-			id: 2,
-			description: "Learn Redux",
-			done: false,
-		},
-		{
-			id: 3,
-			description: "Learn React Native",
-			done: true,
-		},
-	])
+	const [to_dos, setTodo] = useState(
+		localStorage.getItem("todos")
+			? JSON.parse(localStorage.getItem("todos"))
+			: todos.todos
+	)
 	const deleteTodo = (id) => {
 		setTodo(to_dos.filter((todo) => todo.id !== id))
 	}
@@ -38,10 +26,14 @@ const TodoApp = () => {
 			)
 		)
 	}
-
+	const onCompleteAll = () => {
+		if (to_dos.every((todo) => todo.done)) {
+			alert("Has completado todos los todos")
+		}
+	}
 	useEffect(() => {
-		console.log(filter)
-	}, [filter])
+		localStorage.setItem("todos", JSON.stringify(to_dos))
+	}, [to_dos])
 
 	return (
 		<div className="App">
