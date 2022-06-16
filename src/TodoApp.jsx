@@ -8,14 +8,12 @@ import TodoCounter from "./Components/TodoCounter/TodoCounter"
 import TodoItem from "./Components/TodoItem/TodoItem"
 import TodoList from "./Components/TodoList/TodoList"
 import TodoSearch from "./Components/TodoSearch/TodoSearch"
+import { useLocalStorage } from "./CustomHooks/useLocalStorage"
 import todos from "./todos.json"
 const TodoApp = () => {
 	const [filter, setFilter] = useState([])
-	const [to_dos, setTodo] = useState(
-		localStorage.getItem("todos")
-			? JSON.parse(localStorage.getItem("todos"))
-			: todos.todos
-	)
+	const [to_dos, setTodo] = useLocalStorage("todos", [])
+
 	const deleteTodo = (id) => {
 		setTodo(to_dos.filter((todo) => todo.id !== id))
 	}
