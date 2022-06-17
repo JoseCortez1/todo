@@ -19,13 +19,11 @@ const TodoProvider = ({ children }) => {
 			)
 		)
 	}
-	const CreateTodo = (newTodo, setNewTodo, setOpen) => {
+	const CreateTodo = (newTodo) => {
 		setTodo([
 			...to_dos,
 			{ description: newTodo, id: to_dos.length + 1, done: false },
 		])
-		setNewTodo("")
-		setOpen(false)
 	}
 	const onCompleteAll = () => {
 		if (to_dos.every((todo) => todo.done)) {

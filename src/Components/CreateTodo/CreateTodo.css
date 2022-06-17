@@ -1,17 +1,57 @@
 /** @format */
 .create_todo {
+	width: 100%;
 	position: relative;
 }
 .button_add {
 	position: absolute;
-	width: 3rem;
-	height: 3rem;
+	width: 5rem;
+	height: 5rem;
 	top: 0;
 	right: 0;
-	transform: translate(5rem, -2rem);
+	transform: translate(-70%, -50%);
 	cursor: pointer;
 }
 .button_add:hover {
-	transform: translate(5rem, -2rem) rotate(360deg);
+	transform: translate(-70%, -50%) rotate(360deg);
 	transition: ease-in-out 0.5s;
+}
+
+.modal_create {
+	width: 70%;
+	padding: 3rem 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modal_create .buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2rem auto;
+	width: 100%;
+	gap: 1rem;
+}
+
+.modal_create button {
+	width: 100%;
+	height: 2.5rem;
+	font-size: 1.5rem;
+	background: var(--primary);
+	color: #fff;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.modal_create button.cancel {
+	width: 100%;
+	height: 2.5rem;
+	font-size: 1.5rem;
+	background: var(--contrast1);
+	color: #fff;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
 }

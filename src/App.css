@@ -27,6 +27,12 @@ input[type="text"] {
 	border: none;
 	border-radius: 0.3rem;
 	outline-offset: unset;
+
+	width: 90%;
+
+	height: 2.5rem;
+	padding: 0.5rem;
+	font-size: 1.5rem;
 }
 input[type="text"]:focus-visible {
 	border: none;

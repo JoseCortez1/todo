@@ -1,18 +1,27 @@
 /** @format */
 
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import "./CreateTodo.css"
 import add from "../../img/add.svg"
 import Modal from "../Modal/Modal"
 import { TodoContext } from "../../Context/TodoContext"
+import { calculateNewValue } from "@testing-library/user-event/dist/utils"
 const CreateTodo = () => {
 	const { CreateTodo } = useContext(TodoContext)
 	const [newTodo, setNewTodo] = useState("")
 	const [open, setOpen] = useState(false)
 
+	const handleCreate = (e) => {
+		CreateTodo(newTodo)
+		setOpen(false)
+		setNewTodo("")
+	}
 	const CancelCreation = () => {
 		setOpen(false)
 		setNewTodo("")
+	}
+	const handleChange = ({ target }) => {
+		setNewTodo(target.value)
 	}
 	return (
 		<div className="create_todo">
@@ -22,13 +31,17 @@ const CreateTodo = () => {
 					<input
 						type="text"
 						placeholder="New Todo"
-						onChange={(e) => setNewTodo(e.target.value)}
+						onChange={handleChange}
 						value={newTodo}
 					/>
-					<button onClick={CancelCreation}>Cancel</button>
-					<button onClick={() => CreateTodo(newTodo, setNewTodo, setOpen)}>
-						Create
-					</button>
+					<div className="buttons">
+						<button className="cancel" onClick={CancelCreation}>
+							Cancel
+						</button>
+						<button onClick={handleCreate} className="confirm">
+							Create
+						</button>
+					</div>
 				</div>
 			</Modal>
 		</div>
