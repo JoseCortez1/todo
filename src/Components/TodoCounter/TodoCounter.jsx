@@ -1,8 +1,11 @@
 /** @format */
 
-import React from "react"
+import React, { useContext } from "react"
+import { TodoContext } from "../../Context/TodoContext"
 import "./TodoCounter.css"
-const TodoCounter = ({ to_dos }) => {
+const TodoCounter = () => {
+	const { to_dos } = useContext(TodoContext)
+
 	const getNotDone = () => {
 		return ` ${to_dos.filter((todo) => todo.done).length} `
 	}

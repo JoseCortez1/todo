@@ -1,8 +1,10 @@
 /** @format */
 
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { TodoContext } from "../../Context/TodoContext"
 import "./TodoSearch.css"
-const TodoSearch = ({ setFilter, to_dos }) => {
+const TodoSearch = () => {
+	const { setFilter, to_dos } = useContext(TodoContext)
 	const [search, setSearch] = useState("")
 	useEffect(() => {
 		setFilter(to_dos)

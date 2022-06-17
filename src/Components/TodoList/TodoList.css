@@ -1,7 +1,7 @@
 /** @format */
 
 .todo_list {
-	width: 80%;
+	width: 95%;
 	height: 60vh;
 	overflow-y: scroll;
 	display: flex;

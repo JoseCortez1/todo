@@ -1,10 +1,13 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import "./TodoItem.css"
 import closeX from "../../img/X.svg"
 import check_mark from "../../img/check_mark.svg"
-const TodoItem = ({ todo, deleteTodo, completeTodo }) => {
+import { TodoContext } from "../../Context/TodoContext"
+const TodoItem = ({ todo }) => {
+	const { deleteTodo, completeTodo } = useContext(TodoContext)
+
 	const [check, setCheck] = useState(false)
 	const handleChange = () => {
 		setCheck(!check)

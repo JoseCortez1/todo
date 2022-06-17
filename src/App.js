@@ -1,12 +1,14 @@
 /** @format */
 
 import "./App.css"
+import { TodoProvider } from "./Context/TodoContext"
 import { TodoApp } from "./TodoApp"
+
 function App() {
 	return (
-		<div>
+		<TodoProvider>
 			<TodoApp />
-		</div>
+		</TodoProvider>
 	)
 }
 
