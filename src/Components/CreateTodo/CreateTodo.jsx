@@ -1,20 +1,15 @@
 /** @format */
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import "./CreateTodo.css"
 import add from "../../img/add.svg"
 import Modal from "../Modal/Modal"
-const CreateTodo = ({ setTodo }) => {
+import { TodoContext } from "../../Context/TodoContext"
+const CreateTodo = () => {
+	const { CreateTodo } = useContext(TodoContext)
 	const [newTodo, setNewTodo] = useState("")
 	const [open, setOpen] = useState(false)
-	const CreateTodo = () => {
-		setTodo((prev) => [
-			...prev,
-			{ description: newTodo, id: prev.length + 1, done: false },
-		])
-		setNewTodo("")
-		setOpen(false)
-	}
+
 	const CancelCreation = () => {
 		setOpen(false)
 		setNewTodo("")
@@ -31,7 +26,9 @@ const CreateTodo = ({ setTodo }) => {
 						value={newTodo}
 					/>
 					<button onClick={CancelCreation}>Cancel</button>
-					<button onClick={CreateTodo}>Create</button>
+					<button onClick={() => CreateTodo(newTodo, setNewTodo, setOpen)}>
+						Create
+					</button>
 				</div>
 			</Modal>
 		</div>

@@ -19,6 +19,14 @@ const TodoProvider = ({ children }) => {
 			)
 		)
 	}
+	const CreateTodo = (newTodo, setNewTodo, setOpen) => {
+		setTodo([
+			...to_dos,
+			{ description: newTodo, id: to_dos.length + 1, done: false },
+		])
+		setNewTodo("")
+		setOpen(false)
+	}
 	const onCompleteAll = () => {
 		if (to_dos.every((todo) => todo.done)) {
 			alert("Has completado todos los todos")
@@ -35,6 +43,7 @@ const TodoProvider = ({ children }) => {
 				setFilter,
 				deleteTodo,
 				completeTodo,
+				CreateTodo,
 				to_dos,
 				setTodo,
 			}}>
